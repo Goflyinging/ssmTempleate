@@ -8,25 +8,19 @@ import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 /***
- * Created on 2016年8月25日<br>
- * Title: [ameaip]_[拦截器]<br>
- * Description: [判断用户状态和权限进行拦截]<br>
- * Copyright: Copyright (c) 2016<br>
- * Company: 西安电子科技大学<br>
- * Department: 软件学院<br>
- * 
- * @author 路星星
+ * Created on 2017/10/10 <br>
+ * Description: [spring 拦截器 demo]<br>
+ * @author lxing
  * @version 1.0
  */
-//@Component("helloInterceptor")
-public class HelloInterceptor implements HandlerInterceptor {
+//@Component("demoInterceptor")
+public class DemoInterceptor implements HandlerInterceptor {
 
 	@Resource
 	protected ServletContext application;
 
 	// 执行Action前先判断权限
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object o) throws Exception {
-
 		return true;
 	}
 

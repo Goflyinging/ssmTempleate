@@ -6,23 +6,10 @@
     <result column="name" property="name" jdbcType="VARCHAR"/>
     <result column="number" property="number" jdbcType="INTEGER" />
   </resultMap>
-  <!--<select id="selectById" parameterType="int"-->
-    <!--resultMap="demoResultMap">-->
-    <!--select * from prjstate-->
-    <!--where prjsid=#{prjsid};-->
-  <!--</select>-->
   <insert id="insert" parameterType="cn.xidian.aemaip.entity.demo.Demo">
     insert into demo
     (name,number)
     values
     (#{name},#{number});
   </insert>
-  <!--<select id="selectByMsg" parameterType="String"-->
-    <!--resultMap="prjstateResultMap">-->
-    <!--select * from prjstate-->
-    <!--where msg=#{msg};-->
-  <!--</select>-->
-  <!--<select id="selectAll" resultMap="prjstateResultMap">-->
-    <!--select * from  prjstate;-->
-  <!--</select>-->
 </mapper>

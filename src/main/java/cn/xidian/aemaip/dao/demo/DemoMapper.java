@@ -4,7 +4,7 @@ import cn.xidian.aemaip.entity.demo.Demo;
 
 /***
  * Created on 2017/10/10 <br>
- * Description: []<br>
+ * Description: [DemoMapper]<br>
  * @author lxing
  * @version 1.0
  */

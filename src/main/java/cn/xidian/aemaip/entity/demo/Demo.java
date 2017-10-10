@@ -2,7 +2,7 @@ package cn.xidian.aemaip.entity.demo;
 
 /***
  * Created on 2017/10/10 <br>
- * Description: []<br>
+ * Description: [demo entity]<br>
  * @author lxing
  * @version 1.0
  */
