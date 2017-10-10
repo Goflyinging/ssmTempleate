@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.xidian.aemaip.dao.demo.DemoMapper" >
+  <resultMap id="demoResultMap" type="cn.xidian.aemaip.entity.demo.Demo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="name" property="name" jdbcType="VARCHAR"/>
+    <result column="number" property="number" jdbcType="INTEGER" />
+  </resultMap>
+  <!--<select id="selectById" parameterType="int"-->
+    <!--resultMap="demoResultMap">-->
+    <!--select * from prjstate-->
+    <!--where prjsid=#{prjsid};-->
+  <!--</select>-->
+  <insert id="insert" parameterType="cn.xidian.aemaip.entity.demo.Demo">
+    insert into demo
+    (name,number)
+    values
+    (#{name},#{number});
+  </insert>
+  <!--<select id="selectByMsg" parameterType="String"-->
+    <!--resultMap="prjstateResultMap">-->
+    <!--select * from prjstate-->
+    <!--where msg=#{msg};-->
+  <!--</select>-->
+  <!--<select id="selectAll" resultMap="prjstateResultMap">-->
+    <!--select * from  prjstate;-->
+  <!--</select>-->
+</mapper>

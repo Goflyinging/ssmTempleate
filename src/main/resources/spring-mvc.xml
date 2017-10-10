@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+	">
+    <mvc:annotation-driven/>
+    <context:component-scan base-package="cn.xidian">
+        <context:include-filter type="annotation"
+                                expression="org.springframework.stereotype.Controller"/>
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.stereotype.Service"/>
+    </context:component-scan>
+    <!-- spirng4.x  json jackson*.jar -->
+    <bean
+            class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"
+            p:ignoreDefaultModelOnRedirect="true">
+        <property name="messageConverters">
+            <list>
+                <bean
+                        class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+            </list>
+        </property>
+    </bean>
+    <!-- json end -->
+    <!--view-->
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/views/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value>
+        </property>
+    </bean>
+    <!--view  end-->
+    <!--interceptor-->
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/find/company/*"/>-->
+            <!--<mvc:exclude-mapping path="/company/register"/>-->
+            <!--<mvc:exclude-mapping path="/company/reSuccess"/>-->
+            <!--<bean class="cn.xidian.aemaip.interceptor.HelloInterceptor"></bean>-->
+        <!--</mvc:interceptor>-->
+
+    <!--</mvc:interceptors>-->
+    <!--interceptor  end-->
+
+</beans>
